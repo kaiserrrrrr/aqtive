@@ -14,6 +14,6 @@ Run this command after using archinstall (as a user with `sudo` privileges).
 ```bash
 curl -fsSL https://is.gd/aqtive | sh
 ```
----
 \
+---
 To update your system, re-run the command as a user with `sudo` privileges.
