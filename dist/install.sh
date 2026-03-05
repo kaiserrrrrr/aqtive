@@ -3,7 +3,7 @@
 sudo pacman -Syu --noconfirm --needed
 
 CPU_VENDOR=$(grep -m1 'vendor_id' /proc/cpuinfo)
-IS_LAPTOP=$([[ -d /sys/class/power_supply/BAT0 || -d /sys/class/input/mouse0 ]] && echo 1 || echo 0)
+IS_LAPTOP=$(cat /sys/class/dmi/id/chassis_type | grep -qE '8|9|10|11|12|14|30|31|32' && echo 1 || echo 0)
 DRIVERS="sof-firmware alsa-firmware mesa udisks2 zram-generator"
 LXQT="lxqt-session lxqt-panel lxqt-runner lxqt-qtplugin lxqt-globalkeys lxqt-notificationd lxqt-config lxqt-policykit lxqt-powermanagement lxqt-themes pcmanfm-qt qterminal lximage-qt screengrab qps openbox xdg-desktop-portal-lxqt"
 UTIL="breeze-icons gvfs xdg-utils xorg-server lightdm lightdm-gtk-greeter light-locker pipewire-audio pipewire-pulse alsa-utils bluez bluez-utils blueman networkmanager network-manager-applet"
