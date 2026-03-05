@@ -7,3 +7,5 @@ sudo systemctl daemon-reload && sudo usermod -aG video,audio,lp,scanner "$USER"
 { [[ "$IS_LAPTOP" == "1" && "$CPU_VENDOR" =~ "GenuineIntel" ]] && sudo systemctl enable thermald; }
 sudo systemctl enable lightdm bluetooth NetworkManager
 sudo -u "$USER" systemctl --user enable --now pipewire pipewire-pulse wireplumber
+
+echo -e "\e[32m[✓] Configuration Complete\e[0m"
