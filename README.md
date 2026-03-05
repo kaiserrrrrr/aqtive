@@ -1,5 +1,5 @@
 # ***🪽 Aqtive*** 
-LXQt on Arch made effortless
+LXQt on Arch made effortless.
 ## 📜 System Requirements
 | Component | Minimum | Recommended |
 | :--- | :--- | :--- |
@@ -15,5 +15,5 @@ Run this command after using Archinstall (as a user with `sudo` privileges).
 curl -fsSL https://is.gd/aqtive | sh
 ```
 
-## 📦 Update
-Re-run the installation command to update your `aqtive install` 
+## 📦 Updates
+Re-run the installation command to update your aqtive install.
