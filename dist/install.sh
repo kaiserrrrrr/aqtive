@@ -1,5 +1,6 @@
 #!/bin/bash
 
+{
 CPU_VENDOR=$(grep -m1 'vendor_id' /proc/cpuinfo)
 IS_LAPTOP=$(cat /sys/class/dmi/id/chassis_type | grep -qE '8|9|10|11|12|14|30|31|32' && echo 1 || echo 0)
 DRIVERS="sof-firmware alsa-firmware mesa udisks2 zram-generator"
@@ -14,4 +15,6 @@ UTIL="breeze-icons gvfs xdg-utils xorg-server lightdm lightdm-gtk-greeter light-
 
 sudo pacman -Syu --noconfirm --needed
 sudo pacman -S --noconfirm --needed $DRIVERS $LXQT $UTIL
+} >/dev/null 2>&1
+
 echo -e "\e[32m[✓] Installation Complete\e[0m"
