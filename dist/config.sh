@@ -7,6 +7,6 @@ USER0=${SUDO_USER:-$USER}
 { sudo systemctl enable lightdm bluetooth NetworkManager; }
 { [[ "$IS_LAPTOP" == "1" ]] && sudo systemctl enable tlp; }
 { [[ "$IS_LAPTOP" == "1" && "$CPU_VENDOR" =~ "GenuineIntel" ]] && sudo systemctl enable thermald; }
-{ sudo -u "$USER0" systemctl --user enable --now pipewire pipewire-pulse wireplumber }
+{ sudo -u "$USER0" systemctl --user enable --now pipewire pipewire-pulse wireplumber; }
 
 echo -e "\e[32m[✓] Configuration Complete\e[0m"
