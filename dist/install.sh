@@ -1,8 +1,6 @@
 #!/bin/bash
 
-echo -n "Installing Packages..."
-
-{
+echo -n "Installing Packages..." && {
 CPU_VENDOR=$(grep -m1 'vendor_id' /proc/cpuinfo)
 IS_LAPTOP=$(cat /sys/class/dmi/id/chassis_type | grep -qE '8|9|10|11|12|14|30|31|32' && echo 1 || echo 0)
 DRIVERS="sof-firmware alsa-firmware mesa udisks2 zram-generator"
@@ -16,6 +14,4 @@ UTIL="breeze-icons gvfs xdg-utils xorg-server lightdm lightdm-gtk-greeter light-
 { grep -q "^\[multilib\]" /etc/pacman.conf && DRIVERS+=" lib32-mesa" || true; }
 
 sudo pacman -Syu --noconfirm --needed && sudo pacman -S --noconfirm --needed $DRIVERS $LXQT $UTIL
-} >/dev/null 2>&1
-
-echo -ne "\rInstallation Complete\033[K"
+} >/dev/null 2>&1 && echo -ne "\rInstallation Complete\033[K"
