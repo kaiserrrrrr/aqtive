@@ -13,4 +13,4 @@ UID0=$(id -u "$USER0")
 { [[ "$IS_LAPTOP" == "1" ]] && sudo systemctl enable tlp; }
 { [[ "$IS_LAPTOP" == "1" && "$CPU_VENDOR" =~ "GenuineIntel" ]] && sudo systemctl enable thermald; }
 { sudo -u "$USER0" XDG_RUNTIME_DIR="/run/user/$UID0" systemctl --user enable --now pipewire pipewire-pulse wireplumber; } 
-} >/dev/null 2>&1 && echo "Configuration Complete"
+} >/dev/null 2>&1 && echo "Configuration Complete."
