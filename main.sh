@@ -1,7 +1,7 @@
 #!/bin/bash
 
 URL="https://raw.githubusercontent.com/Kaiserrrrrr/aqtive/main/dist"
-reboot_now() {  read -p "Reboot now to apply changes? [Y/n] " res; case "$res" in [Yy]*) reboot ;; [Nn]*) echo "Reboot manually to apply changes." && return 0 ;; *) return 0 ;; esac; }
+reboot_now() {  read -p "Reboot now to apply changes? [Y/n] " res < /dev/tty; case "$res" in [Yy]*) reboot ;; [Nn]*) echo "Reboot manually to apply changes." && return 0 ;; *) return 0 ;; esac; }
 
 if pgrep -x "lxqt-session" > /dev/null; then
     curl -fsSL "$URL/install.sh" | sh && \
