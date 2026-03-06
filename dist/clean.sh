@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n "Clearing Redundant Files..." && {
+echo "Clearing Redundant Files..." && {
 sudo journalctl --vacuum-size=5M 
 sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=5M/' /etc/systemd/journald.conf
 sudo sed -i 's/#RuntimeMaxUse=/RuntimeMaxUse=5M/' /etc/systemd/journald.conf
@@ -15,4 +15,4 @@ pacman -Qqs linux-firmware- | grep -vE 'whence|other' | while read -r pkg; do
 done
 
 pacman -Qtdq | xargs -r sudo pacman -Rns --noconfirm && sudo pacman -Scc --noconfirm 
-} >/dev/null 2>&1 && echo -e "\rCleanup Complete\033[K"
+} >/dev/null 2>&1 && tput cuu 1 && tput el && echo "Cleanup Complete"
