@@ -15,8 +15,7 @@ UTIL="breeze-icons gvfs xdg-utils xorg-server lightdm lightdm-gtk-greeter light-
 { [[ "$IS_LAPTOP" == "1" ]] && DRIVERS+=" xf86-input-libinput tlp" || true; }
 { grep -q "^\[multilib\]" /etc/pacman.conf && DRIVERS+=" lib32-mesa" || true; }
 
-sudo pacman -Syu --noconfirm --needed
-sudo pacman -S --noconfirm --needed $DRIVERS $LXQT $UTIL
+sudo pacman -Syu --noconfirm --needed && sudo pacman -S --noconfirm --needed $DRIVERS $LXQT $UTIL
 } >/dev/null 2>&1
 
 echo -ne "\rInstallation Complete\033[K"
