@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -n "Clearing Redundant Files..."
+
 {
 sudo journalctl --vacuum-size=5M 
 sudo sed -i 's/#SystemMaxUse=/SystemMaxUse=5M/' /etc/systemd/journald.conf
@@ -18,4 +20,4 @@ pacman -Qtdq | xargs -r sudo pacman -Rns --noconfirm
 sudo pacman -Scc --noconfirm 
 } >/dev/null 2>&1
 
-echo -e "[✓] Cleanup Complete"
+echo -e "\rCleanup Complete\033[K"
