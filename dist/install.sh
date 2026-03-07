@@ -1,6 +1,6 @@
 #!/bin/bash
 
-{
+echo "Installing Packages..." && {
 CPU_VENDOR=$(grep -m1 'vendor_id' /proc/cpuinfo)
 IS_LAPTOP=$(cat /sys/class/dmi/id/chassis_type | grep -qE '8|9|10|11|12|14|30|31|32' && echo 1 || echo 0)
 DRIVERS="sof-firmware alsa-firmware mesa udisks2 zram-generator"
