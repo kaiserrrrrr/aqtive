@@ -77,4 +77,4 @@ sequenceDiagram
 
 ## 📜 License
 
-&copy; Aqtive 2026. Code released under the [GNU General Public License v3.0](https://github.com/Kaiserrrrrr/aqtive/blob/master/LICENSE).
+&copy; Aqtive 2026. Code released under the [GNU General Public License v3.0](https://github.com/kaiserrrrrr/aqtive/blob/master/LICENSE).
